@@ -1,0 +1,414 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+.head{
+	margin:0 auto;
+	height: 100px;
+	width: 1200px;
+	background-color:white;
+	position: relative;
+}
+.head>img{
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+.head1{
+	float: right;
+}
+.head1>a>li{
+	display: inline-block;
+	width: 130px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	font-weight: bold;
+}
+.head1>a:hover{
+	color: #fe6d00;
+}
+.box{
+	margin: 0px auto;
+	width: 1920px;
+	height: 500px;
+	position: absolute;
+	overflow: hidden;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.box>img{
+	position: absolute;
+	top: 150px;
+	left: 350px;
+}
+.slider{
+	width: 9600px;
+	position: absolute;
+	left: -1920px;
+	font-size: 0;
+}
+.slide{
+	position: relative;
+	display: inline-block;
+	width: 1920px;
+	height: 500px;
+	overflow: hidden;
+}
+.slide>img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.up{
+	position: absolute;
+	top: 135px;
+	left: 440px;
+	color: brown;
+}
+.mou{
+	font-size: 35px;
+	color: brown;
+}
+.pet{
+	color: black;
+	font-size: 35px;
+	opacity: 0.6;
+}
+.up .english{
+	color: brown;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+.big{
+	color: orangered;
+	font-size: 35px;
+}
+.down{
+	height: 30px;
+	width: 1920px;
+	background-color: black;
+	opacity: 0.3;
+	position: absolute;
+	bottom: 0;
+}
+.nav{
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.nav>li{
+	display: inline-block;
+	background-color: #ccc;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin:0 10px;
+	cursor: pointer;
+}
+#active{
+	background: red;
+}
+.box1{
+	margin: 0 auto;
+	width: 1200px;
+	height: 300px;
+	margin-top: 500px;
+}
+.box1-0{
+	width: 100%;
+	height: 130px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.box1-0>a>img{
+	margin-left: 8px;
+	height: 120px;
+	width: 190px;
+}
+.box1-1>a>li{
+	display: inline-block;
+	margin-left: 8px;
+	width: 190px;
+	text-align: center;
+}
+.box1-1>a:hover{
+	color: #fe6d00;
+}
+.box2{
+	margin: 0px auto;
+	width: 1200px;
+	height: 350px;
+}
+.box2-0{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	width: 500px;
+	float: left;
+}
+.box2-1{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	width: 550px;
+	float: right;
+}
+.box2-2{
+	width: 650px;
+	height: 250px;
+	float: left;
+}
+.box2-2>img{
+	width: 160px;
+	height: 100px;
+	padding-top: 15px;
+	float: left;
+}
+.box2-2>div{
+	padding-top: 15px;
+	padding-left: 175px;
+	height: 100px;
+}
+.box2-2>div>a{
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 30px;
+}
+.box2-2>div>a:hover{
+	text-decoration: underline;
+	color: #fe6d00;
+}
+.box2-2>div>p{
+	font-size: 11px;
+	line-height: 20px;
+}
+.box2-3{
+	width: 550px;
+	height: 250px;
+	float: right;
+}
+.box3{
+	margin: 0px auto;
+	width: 1200px;
+	height: 250px;
+}
+.box3-0{
+	padding-top: 25px;
+}
+.box3-1{
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+}
+.box3-1>div{
+	width:2680px;
+	position: absolute;
+	top: 50%;
+	left:0px;
+	transform: translateY(-50%);
+}
+.box3-1>div>li{
+	display: inline-block;
+	float: left;
+	padding: 10px;
+	margin-right: 15px;
+	width: 300px;
+}
+.box4{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 351px;
+	width: 1200px;
+}
+.one{
+	width: 500px;
+	height: 313px;
+	background-color: black;
+	font-size:0px;
+	position: absolute;
+	overflow: hidden;
+}
+.two{
+	width: 320px;
+	height: 313px;
+	margin-left: 550px;
+}
+.two>div{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-radius: 50%;
+	margin-top: 40px;
+	margin-left: 15px;
+	cursor: pointer;
+	font-size: 25px;
+	color: #fe6d00;
+	border: 2px solid black;
+}
+.two>div:hover{
+	background-color: #fe6d00;
+	color: white;
+	border-color: #fe6d00;
+	box-shadow: 0px 0px 15px #fe6d00;
+}
+.two>div>p{
+	line-height: 100px;
+	text-align: center;
+	cursor: pointer;
+}
+.li-1,.li-4{
+	width: 100px;
+	height: 313px;
+	position: absolute;
+	overflow: hidden;
+	display: inline-block;
+}
+.li-2,.li-3{
+	width: 500px;
+	height: 62.6px;
+	position: absolute;
+	overflow: hidden;
+	display: inline-block;
+}
+.mv0{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 330px;
+	height: 313px;
+}
+.box5{
+	margin: 0px auto;
+	height: 50px;
+	background-color: #ccc;
+}
+.box5>p{
+	text-align: center;
+	line-height: 50px;
+}
+.box6{
+	margin: 0px auto;
+	height: 80px;
+	background-color: black;
+}
+.box6>p{
+	text-align: center;
+	line-height: 40px;
+	color: white;
+}
+.rightlist{
+	position: fixed;
+	top: 47%;
+	right: 0;
+}
+.rightlist>a>li{
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	position: relative;
+	padding-top: 1px;
+	border: 1px solid #ccc;
+}
+.rightlist>a>li>img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.rightlist>a>li>div{
+	padding-left: 10px;
+	padding-top: 6px;
+	width: 30px;
+	height: 30px;
+}
+#sight{
+	position: fixed;
+	height: 230px;
+	right: 45px;
+	top: 45%;
+	width: 30px;
+}
+#one{
+	position: fixed;
+	top: 45%;
+	right: 75px;
+	width: 450px;
+	height: 230px;
+	border-top: 2px solid #fe6d00;
+	background-color: white;
+	display: none;
+	box-shadow: 0px 0px 5px #ccc;
+}
+.one-2>a>li{
+	display: inline-block;
+	width: 120px;
+	height: 30px;
+	margin-left: 20px;
+	margin-top: 5px;
+	color: #ccc;
+}
+.one-2>a>li:hover{
+	color: #fe6d00;
+}
+#two{
+	position: fixed;
+	top: 52%;
+	right: 75px;
+	width: 300px;
+	height: 100px;
+	border-top: 2px solid #fe6d00;
+	background-color: white;
+	display: none;
+	box-shadow: 0px 0px 5px #ccc;
+}
+#three{
+	position: fixed;
+	top: 45%;
+	right: 75px;
+	width: 200px;
+	height: 200px;
+	background-color: white;
+	display: none;
+	box-shadow: 0px 0px 5px #ccc;
+}
+.aa{
+	margin: 0 auto;
+	width: 1200px;
+	font-size: 0;
+	position: relative;
+}
+.aa>li{
+	display: inline-block;
+	width: 350px;
+	height: 350px;
+	border: 10px solid white;
+	cursor: pointer;
+}
+.up2{
+	width: 1070px;
+	height: 350px;
+	position: absolute;
+	background-color: yellow;
+	display: none;
+	opacity: 0;
+	top: 30px;
+	left: 60px;
+}
+.up1{
+	width: 1070px;
+	height: 350px;
+	position: absolute;
+	background-color: yellow;
+	display: none;
+	opacity: 0;
+	bottom: 30px;
+	left: 60px;
+}
