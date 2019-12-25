@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title></title>
+	<meta charest="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="web2.css" />
+	<script src="animate.js"></script>
+	</head>
+	<body>
+	<div class="head">
+		<img src="imgs/logo.png" alt="">
+		<ul class="head1">
+			<a href="#"><li>网站首页</li></a>
+			<a href="#"><li>关于我们</li></a>
+			<a href="#"><li>新闻动态</li></a>
+			<a href="#"><li>宠物用品</li></a>
+			<a href="#"><li>在线留言</li></a>
+			<a href="#"><li style="color: #fe6d00;">联系我们</li></a>
+		</ul>
+	</div>
+	<div style="width: 100%;position: relative;" id="main">
+		<div style="width: 100%;overflow: hidden;">
+			<div class="box" id="box">
+				<div class="slider" id="slider">
+					<div class="slide"><img src="imgs/3.jpg" alt=""></div>
+					<div class="slide"><img src="imgs/1.jpg" alt=""></div>
+					<div class="slide"><img src="imgs/2.jpg" alt=""></div>
+					<div class="slide"><img src="imgs/3.jpg" alt=""></div>
+					<div class="slide"><img src="imgs/1.jpg" alt=""></div>
+				</div>
+				<img src="imgs/wenzi2.png" alt="">
+				<div class="up">
+					<p><span class="mou">MOUMOU</span><span class="pet">宠物生活馆</span></p>
+					<p class="english">SO-AND-SO PET LIFE HALL</p>
+					<p><span class="big">您</span><span>有您的亲人、朋友、事业，</span><span class="big">但我</span><span>只有你！</span><br/><span>用心去关爱你的宠物宝贝</span></p>
+				</div>
+				<div class="down">
+					<ul class="nav" id="nav">
+						<li class="active" id="active"></li>
+						<li ></li>
+						<li ></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<ul class="important3">
+		<li class="first"><img src="imgs/vb.jpg" class="ims"></li>
+		<li class="second"><img src="imgs/vx.jpg" clas=="ims"></li>
+	</ul>
+
+	<div class="important">
+		<div class="important1">
+			<img src="imgs/wenzi.png" class="img1">
+			<img src="imgs/small.jpg" class="img2" id="img2">	
+		</div>
+		<div class="important2">
+			<p>地址：上海市xx区xx路xx广场x号楼xx号</p>
+			<p>邮政编码：20000</p>
+			<p>公司邮箱：moumou@xxxxx.com</p>
+			<p>公司传真：021-123456x8</p>
+			<p>联系电话：021-12XXX678</p>
+			<p>联系人：XX先生</p>
+			<p>企业QQ：123XXX678</p>
+		</div>
+		
+	</div>
+	<div class="bottom">
+			<div class="gray">
+				<p class="aa">
+	                <a href="">网站首页</a>
+	                <span>&nbsp;|&nbsp;</span>
+	                <a href="">关于我们</a>
+	                <span>&nbsp;|&nbsp;</span>
+	                <a href="">新闻动态</a>
+	                <span>&nbsp;|&nbsp;</span>
+	                <a href="">宠物用品</a>
+	                <span>&nbsp;|&nbsp;</span>
+	                <a href="">在线留言</a>
+	                <span>&nbsp;|&nbsp;</span>
+	                <a href="">联系我们</a>
+	            </p>
+			</div>
+			<div class="black">
+				<p>©2004-2014 版权所有 © 某某公司  未经许可  严禁复制  | 沪ICP备000000号</p>
+				<p>联系电话：010-0000-0000</p>
+			</div>
+	</div>
+	</body>
+	<script>
+		var box = document.getElementById("box");
+		var slider = document.getElementById("slider");
+		var oNavlist = document.getElementById("nav").children;
+		var index = 1;
+		var timer;
+		var isMoving = false;
+		box.onmouseover = function(){
+			clearInterval(timer);
+		}
+		box.onmouseout = function(){
+			timer = setInterval(next,3000);
+		}
+		for(var i = 0;i<oNavlist.length;i++){
+			oNavlist[i].index = i;
+			oNavlist[i].onclick = function(){
+				index = this.index + 1;
+				navmove();
+				animate(slider,{left:-1920*index});
+			}
+		}
+		function next(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index++;
+			navmove();
+			animate(slider,{left:-1920*index},function(){
+				if(index==4){
+					slider.style.left = "-1920px";
+					index=1;
+				}
+				isMoving= false;
+			});
+		}
+		function prev(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index--;
+			navmove();
+			animate(slider,{left:-1920*index},function(){
+				if(index==0){
+					slider.style.left = "-5760px";
+					index=3;
+				}
+				isMoving= false;
+			});
+		}
+		function navmove(){
+			for(var i = 0;i<oNavlist.length;i++){
+				oNavlist[i].id = "";
+			}
+			if(index > 3){
+				oNavlist[0].id = "active";
+			}else if(index<=0){
+				oNavlist[2].id = "active";
+			}else{
+				oNavlist[index-1].id = "active";
+			}
+		}
+		timer = setInterval(next,3000);
+
+		var img2 = document.getElementById("img2");
+		var key=true;
+		function a(){
+			if(key){
+				img2.src="imgs/school.jpg";
+				key=false;
+			}
+			else{
+				img2.src="imgs/small.jpg";
+				key=true;
+			}
+		}
+		img2.setAttribute("onclick", "a()");
+	</script>
+	</html>
