@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>-海洋文化公司</title>
+	<link rel="stylesheet" href="css/animal.css">
+	<script src="js/animate.js"></script>
+</head>
+<body style="background-image: url(images/backgroundimg.jpg) background-size: 100% 100%">
+	<div class="head">
+		<img src="images/logo.png" alt="">
+		<ul class="head1">
+			<a href="#"><li>网站首页</li></a>
+			<a href="#"><li>关于我们</li></a>
+			<a href="#"><li>新闻动态</li></a>
+			<a href="#"><li>宠物用品</li></a>
+			<a href="#"><li style="color:#fe6d00">在线留言</li></a>
+			<a href="#"><li>联系我们</li></a>
+		</ul>
+	</div>
+	<div style="width: 100%;position: relative;" id="main">
+		<div style="width: 100%;overflow: hidden;">
+			<div class="box" id="box">
+				<div class="slider" id="slider">
+					<div class="slide"><img src="images/3.jpg" alt=""></div>
+					<div class="slide"><img src="images/1.jpg" alt=""></div>
+					<div class="slide"><img src="images/2.jpg" alt=""></div>
+					<div class="slide"><img src="images/3.jpg" alt=""></div>
+					<div class="slide"><img src="images/1.jpg" alt=""></div>
+				</div>
+				<img src="images/wenzi.png" alt="">
+				<div class="up">
+					<p><span class="mou">MOUMOU</span><span class="pet">宠物生活馆</span></p>
+					<p class="english">SO-AND-SO PET LIFE HALL</p>
+					<p><span class="big">您</span><span>有您的亲人、朋友、事业，</span><span class="big">但我</span><span>只有你！</span><br/><span>用心去关爱你的宠物宝贝</span></p>
+				</div>
+				<div class="down">
+					<ul class="nav" id="nav">
+						<li class="active" id="active"></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<img src="images/onlinemessage.png" alt="" class="message"  id="look">
+	<div class="container">
+		<div class="catimg">
+			<img src="images/online.jpg" id="cat1">
+			<p class="word"> 猫咪，人类的好伙伴</p>
+			<p class="hide" id="hide">猫咪，人类的好伙伴</p>
+		</div>		
+		<div class="liuyan">
+			<p >反馈主题：</p>
+			<input type="text" id="input" style="background-color: #c8c8c8;">
+			<p>联系人：</p>
+			<input type="text" id="cp" style="background-color: #d8d8d8;">
+			<p>联系电话：</p>
+			<input type="text" id="cn" style="background-color: #e8e8e8;">
+			<p>电子邮件：</p>
+			<input type="text" id="email" style="background-color: #f0f0f0;"><br/>
+			<p><span>验证码：</span>
+				<input type="text" class="code"> 
+				<img src="images/1253.jpg" alt="" class="codeImg">
+				<span class="change">看不清？ 更换一张</span>
+			</p>
+			<input type="submit" class="sub">
+
+		</div>
+
+	</div>
+	<div class="bottom">
+		<div class="gray">
+			<p class="aa">
+                <a href="">网站首页</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="">关于我们</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="">新闻动态</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="">宠物用品</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="">在线留言</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="">联系我们</a>
+            </p>
+		</div>
+		<div class="black">
+			<p>©2004-2014 版权所有©  某某公司  未经许可  严禁复制  | 沪ICP备000000号</p>
+			<p>联系电话：010-0000-0000</p>
+		</div>
+	</div>
+	<div class=red id="cf1">
+		<img src="images/rabbit.jpg" alt="" class="smile">
+		<div class="blue" id="cf"></div>
+	</div>
+	<div class="run">
+		<img src="images/跑.gif" id="running">
+	</div>
+</body>
+<script>
+	var box = document.getElementById("box");
+	var slider = document.getElementById("slider");
+	var oNavlist = document.getElementById("nav").children;
+	var myImg=document.getElementsByClassName("codeImg")[0];
+	var changeImg=document.getElementsByClassName("change")[0];
+	var sub=document.getElementsByClassName("sub")[0];
+	// var num=document.getElementsByClassName("code")[0].value;
+	var index = 1;
+	var timer;
+	var isMoving = false;
+	var arr=["1253","1291","1916","3735","6824","6A29"];
+	var Path="1253";
+		
+
+	//更换验证码
+	changeImg.onclick=function(){
+		var ran=Math.floor(Math.random()*6);
+		myImg.setAttribute("src","images/"+arr[ran]+".jpg");
+		Path=arr[ran];
+		console.log(Path);
+
+	}
+
+	sub.onclick=function(){
+		var count=0;
+		var theme=document.getElementById("input").value;
+		var person=document.getElementById("cp").value;
+		var number=document.getElementById("cn").value;
+		var email=document.getElementById("email").value;
+		var num=document.getElementsByClassName("code")[0].value;
+		if(theme.length == 0 || person.length==0 || number.length==0 || email.length==0){
+			alert("信息尚未填写完全");
+			count = 1;
+		}
+		if (num == Path && !count){
+			alert("验证成功！   感谢您的反馈😁");
+		}
+		else if(num != Path){
+			alert("验证码输入有误！");
+			// console.log(Path,num);
+		}
+
+	}
+
+	//兔子
+ 	var share = document.getElementById("cf1");
+    share.onmouseover=function(){
+        startMove(0);
+    }
+
+    share.onmouseout=function(){
+        startMove(-400);
+    }
+
+    var timer;
+    function startMove(target){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed;
+            if(share.offsetLeft<target){
+                speed = 20;//出来
+            }
+            else{
+                speed=-20;//回去
+            }
+
+            if(share.offsetLeft==target){
+                clearInterval(timer);
+            }
+            else{
+                share.style.left=share.offsetLeft+speed+"px";
+            }
+        }, 20);
+
+    }
+
+    //奔跑的狗
+    var gundong=document.getElementById("running");
+    window.onload=function(){
+		var timer = setInterval(function(){
+			var now = parseInt(getStyle(gundong,"right"));
+			gundong.style.right=now+20+"px";
+			if (now>=1500){
+				// clearInterval(timer);
+				gundong.style.right=0+"px";
+			}							
+		},40)
+	}
+    
+    //猫咪
+    var cat=document.getElementById("hide");
+    var onmov = document.getElementsByClassName("catimg")[0];
+    onmov.onmouseover=function(){
+        startMoveout(0);
+    }
+
+    onmov.onmouseout=function(){
+        startMoveout(260);
+    }
+    var time;
+    function startMoveout(target){
+        clearInterval(time);
+        time = setInterval(function(){
+            var speed;
+            if(cat.offsetTop<target){
+                speed = 20;//回去
+            }
+            else{
+                speed=-20;//出来
+            }
+
+            if(cat.offsetTop==target){
+                clearInterval(time);
+            }
+            else{
+                cat.style.top=cat.offsetTop+speed+"px";
+            }
+        }, 20);
+    }
+
+
+	//轮播图
+	box.onmouseover = function(){
+		clearInterval(timer);
+	}
+	box.onmouseout = function(){
+		timer = setInterval(next,3000);
+	}
+	for(var i = 0;i<oNavlist.length;i++){
+		oNavlist[i].index = i;
+		oNavlist[i].onclick = function(){
+			index = this.index + 1;
+			navmove();
+			animate(slider,{left:-1920*index});
+		}
+	}
+	function next(){
+		if(isMoving){
+			return;
+		}
+		isMoving = true;
+		index++;
+		navmove();
+		animate(slider,{left:-1920*index},function(){
+			if(index==4){
+				slider.style.left = "-1920px";
+				index=1;
+			}
+			isMoving= false;
+		});
+	}
+	function prev(){
+		if(isMoving){
+			return;
+		}
+		isMoving = true;
+		index--;
+		navmove();
+		animate(slider,{left:-1920*index},function(){
+			if(index==0){
+				slider.style.left = "-5760px";
+				index=3;
+			}
+			isMoving= false;
+		});
+	}
+	function navmove(){
+		for(var i = 0;i<oNavlist.length;i++){
+			oNavlist[i].id = "";
+		}
+		if(index > 3){
+			oNavlist[0].id = "active";
+		}else if(index<=0){
+			oNavlist[2].id = "active";
+		}else{
+			oNavlist[index-1].id = "active";
+		}
+	}
+	timer = setInterval(next,3000);
+	window.location.hash="#look";
+
+</script>
+</html>
